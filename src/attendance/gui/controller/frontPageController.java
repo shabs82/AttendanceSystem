@@ -5,6 +5,8 @@
  */
 package attendance.gui.controller;
 
+import attendance.gui.model.MainModel;
+import attendance.gui.model.MainModel.UserType;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,12 +26,14 @@ import javafx.stage.Stage;
  */
 public class frontPageController implements Initializable {
 
+    private MainModel model = new MainModel();
+    
     private Label label;
     @FXML
     private Button teacherBtn;
     @FXML
     private Button studentBtn;
-
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -37,21 +41,29 @@ public class frontPageController implements Initializable {
 
     @FXML
     private void teacherHandleBtn(ActionEvent event) throws IOException {
+        model.setUserType(UserType.TEACHER);
         showLoginPage();
     }
 
     @FXML
     private void studentHandleBtn(ActionEvent event) throws IOException {
+        model.setUserType(UserType.STUDENT);
         showLoginPage();
     }
 
     private void showLoginPage() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/attendance/gui/view/loginPage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/attendance/gui/view/loginPage.fxml"));
+        Parent root = fxmlLoader.load();
+        
+        LoginPageController controller = fxmlLoader.getController();
+        controller.setModel(model);
+        
+        
         Scene scene = new Scene(root);
         
         Scene currentScene = studentBtn.getScene();
         Stage stage = (Stage) currentScene.getWindow();
-
+        //currentScene.setRoot(root);
         stage.setScene(scene);
         stage.setTitle("Login");
         stage.show();

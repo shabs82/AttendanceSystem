@@ -7,7 +7,70 @@ and open the template in the editor.
     Created on : 2019/3/28, 上午 09:17:56
     Author     : wailampoon
 */
+
+
+
+
 #teacherBtn {
- 
-    
+    -fx-background-color: #FFAD36;
+    -fx-background-image: url("teacher-male-95007.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: cover;
+    -fx-background-radius: 32 ;
+    -fx-border-width: 3; 
+    -fx-border-color: white;
+    -fx-border-radius:  30;
 }
+
+#teacherBtn:hover{
+    -fx-background-color: #FF5915;
+    -fx-background-radius:  32;
+    -fx-border-width: 3; 
+    -fx-border-color: black;
+    -fx-border-radius:  30;  
+}
+
+#studentBtn{
+    -fx-background-image: url("graduate-student-icon-14068.png");
+    -fx-background-color: #FFAD36;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: cover;
+    -fx-background-radius: 32 ;
+    -fx-border-width: 3; 
+    -fx-border-color: white;
+    -fx-border-radius:  30;
+}
+
+#studentBtn:hover{
+    -fx-background-color: #FF5915;
+    -fx-background-radius:  32;
+    -fx-border-width: 3; 
+    -fx-border-color: black;
+    -fx-border-radius:  30;
+}
+
+/*-------------------------------- ffeb3b-------------------------------*/
+
+
+#loginPageBackground{
+    -fx-background-image:url("easv.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: 100%;
+}
+
+.inputTextField{
+    -fx-background-color: #FFAD36;
+
+}
+
+
+#logInbtn{
+   
+    -fx-background-color: #FF3D00;
+    -fx-text-fill:    white;
+
+}
+
