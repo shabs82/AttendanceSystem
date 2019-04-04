@@ -32,7 +32,7 @@ public class MainModel {
         return type;
     }
     
-     public Student getStudent(String username, String password) throws AttendanceException
+    public Student getStudent(String username, String password) throws AttendanceException
     {
         return manager.getStudent(username, password);
     }

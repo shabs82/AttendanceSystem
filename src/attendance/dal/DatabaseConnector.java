@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package attendance.dal;
 
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
@@ -12,9 +8,10 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.util.Properties;
 
+
 /**
  *
- * @author wailampoon
+ * @author Test
  */
 public class DatabaseConnector {
     
@@ -42,4 +39,5 @@ public class DatabaseConnector {
     {
         return ds.getConnection();
     }
+    
 }

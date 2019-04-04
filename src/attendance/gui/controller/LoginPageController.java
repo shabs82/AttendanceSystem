@@ -52,13 +52,11 @@ public class LoginPageController implements Initializable {
 
     @FXML
     private void loginAction(ActionEvent event) {
-        
         try
         {
-        String username = idInput.getText();
-        String password = passwordInput.getText();
-        
-        if(model.getUserType() == UserType.TEACHER)
+            String username = idInput.getText();
+            String password = passwordInput.getText();
+            if(model.getUserType() == UserType.TEACHER)
             {
                 //show teacher view
             }
@@ -68,14 +66,10 @@ public class LoginPageController implements Initializable {
                 System.out.println("I logged in student");
             }
         }
-                catch(AttendanceException ex)
+        catch(AttendanceException ex)
         {
             System.out.println(ex.getMessage());
         }
     }
     
 }
-       
-    
-    
-
