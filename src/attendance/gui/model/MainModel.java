@@ -5,6 +5,8 @@
  */
 package attendance.gui.model;
 
+import attendance.AttendanceException;
+import attendance.be.Student;
 import attendance.bll.BLLManager;
 
 /**
@@ -28,6 +30,11 @@ public class MainModel {
     public UserType getUserType()
     {
         return type;
+    }
+    
+     public Student getStudent(String username, String password) throws AttendanceException
+    {
+        return manager.getStudent(username, password);
     }
     
     

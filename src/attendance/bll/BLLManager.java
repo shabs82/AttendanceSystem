@@ -5,6 +5,7 @@
  */
 package attendance.bll;
 
+import attendance.AttendanceException;
 import attendance.be.Student;
 import attendance.be.Teacher;
 import attendance.dal.DALManager;
@@ -17,7 +18,7 @@ public class BLLManager {
     
     private DALManager manager = new DALManager();
     
-    public Student getStudent(String username, String password)
+    public Student getStudent(String username, String password) throws AttendanceException
     {
         return manager.getStudent(username, password);
     }

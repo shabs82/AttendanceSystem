@@ -5,8 +5,11 @@
  */
 package attendance.dal;
 
+import attendance.AttendanceException;
 import attendance.be.Student;
 import attendance.be.Teacher;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 /**
  *
@@ -14,14 +17,23 @@ import attendance.be.Teacher;
  */
 public class DALManager {
     
-    public Student getStudent(String username, String password)
+    private DatabaseConnector connector = new DatabaseConnector();
+    
+    public Student getStudent(String username, String password) throws AttendanceException 
     {
-        
+        try(Connection connection = connector.getConnection())
+        {
+            return null;
+        }
+        catch(SQLException ex)
+        {
+            throw new AttendanceException("Cannot connect to database");
+        }
     }
     
     public Teacher getTeacher(String username, String password)
     {
-        
+        return null;
     }
     
 }

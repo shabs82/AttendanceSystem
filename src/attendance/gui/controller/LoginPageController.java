@@ -5,6 +5,8 @@
  */
 package attendance.gui.controller;
 
+import attendance.AttendanceException;
+import attendance.be.Student;
 import attendance.gui.model.MainModel;
 import attendance.gui.model.MainModel.UserType;
 import java.net.URL;
@@ -50,16 +52,30 @@ public class LoginPageController implements Initializable {
 
     @FXML
     private void loginAction(ActionEvent event) {
+        
+        try
+        {
         String username = idInput.getText();
         String password = passwordInput.getText();
+        
         if(model.getUserType() == UserType.TEACHER)
-        {
-            //show teacher view
+            {
+                //show teacher view
+            }
+            else
+            {
+                Student student = model.getStudent(username, password);
+                System.out.println("I logged in student");
+            }
         }
-        else
+                catch(AttendanceException ex)
         {
-            //show student view
+            System.out.println(ex.getMessage());
         }
     }
     
 }
+       
+    
+    
+
