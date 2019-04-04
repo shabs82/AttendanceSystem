@@ -9,10 +9,7 @@ import java.sql.Connection;
 import java.util.Properties;
 
 
-/**
- *
- * @author Test
- */
+
 public class DatabaseConnector {
     
     private SQLServerDataSource ds;
