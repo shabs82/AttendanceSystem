@@ -15,7 +15,7 @@ import attendance.bll.BLLManager;
  */
 public class MainModel {
     
-    private BLLManager manager = new BLLManager();
+    private BLLManager bllmanager = new BLLManager();
     private UserType type;
     
     public enum UserType {
@@ -34,7 +34,12 @@ public class MainModel {
     
     public Student getStudent(String username, String password) throws AttendanceException
     {
-        return manager.getStudent(username, password);
+        return bllmanager.getStudent(username, password);
+    }
+    
+    public Student createStudent(int id, String name, String username, String password){
+            
+        return null;
     }
     
     

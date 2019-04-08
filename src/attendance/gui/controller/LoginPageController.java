@@ -9,6 +9,7 @@ import attendance.AttendanceException;
 import attendance.be.Student;
 import attendance.gui.model.MainModel;
 import attendance.gui.model.MainModel.UserType;
+import attendance.gui.util.MessageBoxHelper;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -39,10 +40,7 @@ public class LoginPageController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        String inputUserName = idInput.getText();
-        
-        
+        String inputUserName = idInput.getText();  
     }   
     
     public void setModel(MainModel model)
@@ -52,22 +50,20 @@ public class LoginPageController implements Initializable {
 
     @FXML
     private void loginAction(ActionEvent event) {
-        try
-        {
+        try{
             String username = idInput.getText();
             String password = passwordInput.getText();
-            if(model.getUserType() == UserType.TEACHER)
-            {
+            if(model.getUserType() == UserType.TEACHER){
                 //show teacher view
             }
-            else
-            {
+            else{
                 Student student = model.getStudent(username, password);
                 System.out.println("I logged in student");
             }
-        }
-        catch(AttendanceException ex)
-        {
+            
+            
+       }
+        catch(AttendanceException ex){
             System.out.println(ex.getMessage());
         }
     }

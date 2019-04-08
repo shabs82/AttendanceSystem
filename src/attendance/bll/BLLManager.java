@@ -9,23 +9,29 @@ import attendance.AttendanceException;
 import attendance.be.Student;
 import attendance.be.Teacher;
 import attendance.dal.DALManager;
+import attendance.dal.StudentDAO;
+import attendance.dal.TeacherDAO;
+import java.sql.SQLException;
 
-/**
- *
- * @author wailampoon
- */
+
 public class BLLManager {
     
-    private DALManager manager = new DALManager();
+    private DALManager dalmanager = new DALManager();
+    private StudentDAO sdao = new StudentDAO();
+    private TeacherDAO tdao = new TeacherDAO();
     
     public Student getStudent(String username, String password) throws AttendanceException
     {
-        return manager.getStudent(username, password);
+        return dalmanager.getStudent(username, password);
     }
     
     public Teacher getTeacher(String username, String password)
     {
-        return manager.getTeacher(username, password);
+        return dalmanager.getTeacher(username, password);
     }
     
+    public Student createStudent(int id, String name, String username, String password) throws SQLException{
+        return sdao.createStudent(id, name, username, password);
+    }
+                
 }
