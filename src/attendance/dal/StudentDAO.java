@@ -6,14 +6,10 @@
 package attendance.dal;
 
 import attendance.be.Student;
-import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Properties;
 
 /**
  *
@@ -21,28 +17,16 @@ import java.util.Properties;
  */
 public class StudentDAO {
     
-    private SQLServerDataSource ds;
+    private DatabaseConnector connector;
  
     public  StudentDAO(){
-          try {
-            Properties databaseProperties = new Properties();
-            databaseProperties.load(new FileInputStream("database.settings"));
-            ds = new SQLServerDataSource();
-            ds.setServerName(databaseProperties.getProperty("Server"));
-            ds.setDatabaseName(databaseProperties.getProperty("Database"));
-            ds.setUser(databaseProperties.getProperty("User"));
-            ds.setPassword(databaseProperties.getProperty("Password"));
-        }
-        catch(IOException e)
-        {
-            e.printStackTrace();
-        }
+        connector = new DatabaseConnector();
     }
     
-    public Student createStudent(int id, String name, String username, String password) throws SQLException{
+    public Student getStudent(int id, String name, String username, String password) throws SQLException{
         Student s = null;
-        try (Connection con = ds.getConnection()) {
-            String sql = "INSERT INTO Student(id, name, username, password) VALUES(?,?)";
+        try (Connection con = connector.getConnection()) {
+            String sql = "INSERT INTO Student(id, name, username, password) VALUES(?,?, ?, ?)";
             PreparedStatement stmt = con.prepareStatement(sql);
             stmt.setInt(1, id);
             stmt.setString(2, name);

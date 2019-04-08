@@ -36,11 +36,4 @@ public class MainModel {
     {
         return bllmanager.getStudent(username, password);
     }
-    
-    public Student createStudent(int id, String name, String username, String password){
-            
-        return null;
-    }
-    
-    
 }

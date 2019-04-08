@@ -9,7 +9,6 @@ import attendance.AttendanceException;
 import attendance.be.Student;
 import attendance.gui.model.MainModel;
 import attendance.gui.model.MainModel.UserType;
-import attendance.gui.util.MessageBoxHelper;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;

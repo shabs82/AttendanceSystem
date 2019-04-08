@@ -11,7 +11,6 @@ import attendance.be.Teacher;
 import attendance.dal.DALManager;
 import attendance.dal.StudentDAO;
 import attendance.dal.TeacherDAO;
-import java.sql.SQLException;
 
 
 public class BLLManager {
@@ -28,10 +27,6 @@ public class BLLManager {
     public Teacher getTeacher(String username, String password)
     {
         return dalmanager.getTeacher(username, password);
-    }
-    
-    public Student createStudent(int id, String name, String username, String password) throws SQLException{
-        return sdao.createStudent(id, name, username, password);
     }
                 
 }
