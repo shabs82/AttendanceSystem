@@ -54,23 +54,63 @@ and open the template in the editor.
 /*-------------------------------- ffeb3b-------------------------------*/
 
 
-#loginPageBackground{
-    -fx-background-image:url("easv.jpg");
+
+#Background
+{
+
+    -fx-background-image: url(easv.jpg);
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
-    -fx-background-size: 100%;
-}
-
-.inputTextField{
-    -fx-background-color: #FFAD36;
+    -fx-background-size: stretch;
+    -fx-opacity: 0.9;
 
 }
 
 
-#logInbtn{
-   
-    -fx-background-color: #FF3D00;
-    -fx-text-fill:    white;
+#AnchorPane2{
+    -fx-background-color:black;
+    -fx-opacity: 0.5;
+    -fx-background-radius: 35 ;
+    -fx-effect: dropshadow(three-pass-box , black, 1, 0.0 , 0, 0);
 
 }
 
+#loginbtn{
+    
+    -fx-text-fill: white;
+   -fx-background-color: #4059a9;
+    -fx-effect: dropshadow(three-pass-box , black, 1, 0.0 , 0, 0);
+    
+}
+
+#loginbtn:hover{
+    
+    -fx-text-fill: white;
+   -fx-background-color: #4059a9;
+    -fx-effect: dropshadow(three-pass-box , black, 10, 0.0 , 0, 0);
+    
+}
+
+
+
+
+#usernameInput{
+
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: WHITE;
+    -jfx-focus-color: #4059a9;
+    -jfx-unfocus-color: WHITE;
+    -jfx-label-float: true;
+
+}
+
+#passwordInput{
+
+    -fx-text-fill: white;
+
+    -fx-prompt-text-fill: WHITE;
+    -jfx-focus-color: #4059a9;
+    -jfx-unfocus-color: WHITE;
+    -jfx-label-float: true;
+
+}

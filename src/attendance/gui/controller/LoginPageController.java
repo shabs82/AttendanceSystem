@@ -9,13 +9,18 @@ import attendance.AttendanceException;
 import attendance.be.Student;
 import attendance.gui.model.MainModel;
 import attendance.gui.model.MainModel.UserType;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
+import java.awt.Desktop;
+import java.net.URI;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.Hyperlink;
+
 
 /**
  * FXML Controller class
@@ -26,12 +31,16 @@ public class LoginPageController implements Initializable {
 
     private MainModel model;
     
+    
+   
     @FXML
-    private Button logInbtn;
+    private JFXButton loginbtn;
     @FXML
-    private TextField idInput;
+    private JFXTextField usernameInput;
     @FXML
-    private TextField passwordInput;
+    private Hyperlink link;
+    @FXML
+    private JFXPasswordField passwordInput;
     
 
     /**
@@ -39,7 +48,7 @@ public class LoginPageController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        String inputUserName = idInput.getText();  
+        String inputUserName = usernameInput.getText();  
     }   
     
     public void setModel(MainModel model)
@@ -50,7 +59,7 @@ public class LoginPageController implements Initializable {
     @FXML
     private void loginAction(ActionEvent event) {
         try{
-            String username = idInput.getText();
+            String username = usernameInput.getText();
             String password = passwordInput.getText();
             if(model.getUserType() == UserType.TEACHER){
                 //show teacher view
@@ -65,6 +74,15 @@ public class LoginPageController implements Initializable {
         catch(AttendanceException ex){
             System.out.println(ex.getMessage());
         }
+    }
+
+   
+
+    @FXML
+    private void goForgotPassword(ActionEvent event) throws Exception {
+        
+         Desktop d = Desktop.getDesktop();
+        d.browse(new URI("https://moodle.easv.dk/login/forgot_password.php"));
     }
     
 }
