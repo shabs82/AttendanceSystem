@@ -13,7 +13,7 @@ and open the template in the editor.
 
 #teacherBtn {
     -fx-background-color: #FFAD36;
-    -fx-background-image: url("teacher-male-95007.png");
+    -fx-background-image: url("pics/teacher-male-95007.png");
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
     -fx-background-size: cover;
@@ -32,7 +32,7 @@ and open the template in the editor.
 }
 
 #studentBtn{
-    -fx-background-image: url("graduate-student-icon-14068.png");
+    -fx-background-image: url("pics/graduate-student-icon-14068.png");
     -fx-background-color: #FFAD36;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
@@ -58,7 +58,7 @@ and open the template in the editor.
 #Background
 {
 
-    -fx-background-image: url(easv.jpg);
+    -fx-background-image: url(pics/easv.jpg);
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
     -fx-background-size: stretch;
