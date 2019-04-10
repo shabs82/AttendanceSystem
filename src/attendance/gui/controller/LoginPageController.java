@@ -67,7 +67,7 @@ public class LoginPageController implements Initializable {
             if(model.getUserType() == UserType.TEACHER){
                 Teacher teacher = model.getTeacher(username, password);
                 System.out.println(teacher.getName());
-                Parent root = FXMLLoader.load(getClass().getResource("/attendance/gui/view/TeacherView.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("/attendance/gui/view/TeacherField.fxml"));
         
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
