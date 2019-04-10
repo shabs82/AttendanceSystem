@@ -1,12 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package attendance.gui.controller;
 
 import attendance.AttendanceException;
 import attendance.be.Student;
+import attendance.be.Teacher;
 import attendance.gui.model.MainModel;
 import attendance.gui.model.MainModel.UserType;
 import com.jfoenix.controls.JFXButton;
@@ -22,7 +19,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
+import javafx.stage.Stage;
 
 
 /**
@@ -61,18 +60,22 @@ public class LoginPageController implements Initializable {
 
     @FXML
     private void loginAction(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
         try{
             String username = usernameInput.getText();
             String password = passwordInput.getText();
             if(model.getUserType() == UserType.TEACHER){
-                //show teacher view
+                Teacher teacher = model.getTeacher(username, password);
+                System.out.println(teacher.getName());
+                Parent root = FXMLLoader.load(getClass().getResource("/attendance/gui/view/TeacherView.fxml"));
+        
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
             }
             else{
                 Student student = model.getStudent(username, password);
-                System.out.println("I logged in student");
-                
-                
-               
+                System.out.println(student.getName());
             }
             
             

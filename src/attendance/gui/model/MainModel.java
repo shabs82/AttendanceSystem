@@ -7,6 +7,7 @@ package attendance.gui.model;
 
 import attendance.AttendanceException;
 import attendance.be.Student;
+import attendance.be.Teacher;
 import attendance.bll.BLLManager;
 
 /**
@@ -35,5 +36,10 @@ public class MainModel {
     public Student getStudent(String username, String password) throws AttendanceException
     {
         return bllmanager.getStudent(username, password);
+    }
+    
+    public Teacher getTeacher(String username, String password) throws AttendanceException
+    {
+        return bllmanager.getTeacher(username, password);
     }
 }

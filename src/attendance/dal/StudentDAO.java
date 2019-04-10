@@ -5,10 +5,11 @@
  */
 package attendance.dal;
 
+import attendance.AttendanceException;
 import attendance.be.Student;
-import com.microsoft.sqlserver.jdbc.SQLServerException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -23,23 +24,27 @@ public class StudentDAO {
         connector = new DatabaseConnector();
     }
     
-    public Student getStudent(int id, String name, String username, String password) throws SQLException{
+    public Student getStudent(String username, String password) throws AttendanceException{
         Student s = null;
         try (Connection con = connector.getConnection()) {
-            String sql = "INSERT INTO Student(id, name, username, password) VALUES(?,?, ?, ?)";
+            String sql = "SELECT * FROM Student WHERE username = ? AND password = ?";
             PreparedStatement stmt = con.prepareStatement(sql);
-            stmt.setInt(1, id);
-            stmt.setString(2, name);
-            stmt.setString(3, username);
-            stmt.setString(4, password);
-            stmt.execute();
-            s = new Student(id, name);
-            //cmDAO.setCategoriesToMovie(m, categories);
-            return s;    
+            stmt.setString(1, username);
+            stmt.setString(2, password);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()){
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                return new Student(id, name);
+            }
+            else
+            {
+                throw new AttendanceException("Cannot find student with given credentials");
+            }
         }
-        catch(SQLServerException ex){
-            ex.printStackTrace();
-            throw ex;
+        catch(SQLException ex)
+        {
+            throw new AttendanceException("Cannot connect to the database");
         }
     }
  }

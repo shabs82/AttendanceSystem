@@ -52,7 +52,7 @@ public class frontPageController implements Initializable {
     }
 
     private void showLoginPage() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/attendance/gui/view/loginPage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/attendance/gui/view/LoginPage.fxml"));
         Parent root = fxmlLoader.load();
         
         LoginPageController controller = fxmlLoader.getController();

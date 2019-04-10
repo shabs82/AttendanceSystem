@@ -24,7 +24,7 @@ public class BLLManager {
         return dalmanager.getStudent(username, password);
     }
     
-    public Teacher getTeacher(String username, String password)
+    public Teacher getTeacher(String username, String password) throws AttendanceException
     {
         return dalmanager.getTeacher(username, password);
     }

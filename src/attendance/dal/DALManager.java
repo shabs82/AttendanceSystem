@@ -8,8 +8,6 @@ package attendance.dal;
 import attendance.AttendanceException;
 import attendance.be.Student;
 import attendance.be.Teacher;
-import java.sql.Connection;
-import java.sql.SQLException;
 
 /**
  *
@@ -17,23 +15,17 @@ import java.sql.SQLException;
  */
 public class DALManager {
     
-    private DatabaseConnector connector = new DatabaseConnector();
+    private StudentDAO sDao = new StudentDAO();
+    private TeacherDAO tDao = new TeacherDAO();
     
     public Student getStudent(String username, String password) throws AttendanceException 
     {
-        try(Connection connection = connector.getConnection())
-        {
-            return null;
-        }
-        catch(SQLException ex)
-        {
-            throw new AttendanceException("Cannot connect to database");
-        }
+            return sDao.getStudent(username, password);
     }
     
-    public Teacher getTeacher(String username, String password)
+    public Teacher getTeacher(String username, String password) throws AttendanceException
     {
-        return null;
+        return tDao.getTeacher(username, password);
     }
     
 }

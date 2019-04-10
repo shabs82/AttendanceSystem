@@ -14,6 +14,11 @@ public class Teacher {
     private String name;
     private int id;
     private String subjects;
+    
+    public Teacher(int id, String name){
+        this.id = id;
+        this.name = name;
+    }
 
     public String getName() {
         return name;
