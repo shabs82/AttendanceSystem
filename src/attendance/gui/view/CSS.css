@@ -132,3 +132,39 @@ and open the template in the editor.
 .sidebtn{
      -fx-text-fill: white;
 }
+
+
+
+/*--------------------------------StudentHome-------------------------------*/
+
+#icon{
+     -fx-background-color:#2D3E50;
+     -fx-background-image: url("pics/Mickey.jpg");
+        -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-background-radius: 50% ;
+    -fx-border-color:black;
+     -fx-border-width: 4 ; 
+    -fx-border-radius:50%;   
+}
+
+#currentDate{
+     -fx-text-fill: white;
+    
+}
+
+#currentTime{
+     -fx-text-fill: white;
+    
+}
+
+#takeAttendanceBtn{
+    -fx-background-color:#4059a9;
+     -fx-effect: dropshadow(three-pass-box , black, 8, 0.0 , 0, 0); 
+     -fx-text-fill: white;
+}
+
+#StudenHomeAnchorPane{
+     -fx-background-color:#2D3E50;
+    
+}
