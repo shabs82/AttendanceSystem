@@ -13,12 +13,15 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import java.awt.Desktop;
+import java.io.IOException;
 import java.net.URI;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Hyperlink;
 
 
@@ -57,7 +60,7 @@ public class LoginPageController implements Initializable {
     }
 
     @FXML
-    private void loginAction(ActionEvent event) {
+    private void loginAction(ActionEvent event) throws IOException {
         try{
             String username = usernameInput.getText();
             String password = passwordInput.getText();
@@ -67,6 +70,9 @@ public class LoginPageController implements Initializable {
             else{
                 Student student = model.getStudent(username, password);
                 System.out.println("I logged in student");
+                
+                
+               
             }
             
             
