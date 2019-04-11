@@ -168,3 +168,26 @@ and open the template in the editor.
      -fx-background-color:#2D3E50;
     
 }
+
+/*-----------------------------StudentField-------------------------------------*/
+
+
+#StudentFieldBorderPane{
+     -fx-background-color:#2D3E50;
+     
+    
+    
+}
+
+#closebtn{
+    
+    -fx-background-color:#2D3E50;
+     
+}
+
+
+.sidebtn{
+    
+    
+     -fx-text-fill: white;
+}

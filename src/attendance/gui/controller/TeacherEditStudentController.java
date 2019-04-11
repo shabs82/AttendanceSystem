@@ -20,7 +20,7 @@ import javafx.scene.control.TableView;
  *
  * @author Test
  */
-public class TeacherViewController implements Initializable {
+public class TeacherEditStudentController implements Initializable {
 
     @FXML
     private JFXTextField txtFieldName;
