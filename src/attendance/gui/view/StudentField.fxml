@@ -7,12 +7,12 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane id="StudentFieldBorderPane" fx:id="StudentFieldBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@Css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.gui.controller.StudentFieldController">
+<BorderPane id="StudentFieldBorderPane" fx:id="StudentFieldBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@CSS.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.gui.controller.StudentFieldController">
    <left>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <JFXButton fx:id="sHomeBtn" onAction="#studentHome" prefHeight="60.0" prefWidth="100.0" styleClass="sidebtn" stylesheets="@Css.css" text="Home" />
-            <JFXButton fx:id="sOVerviewbtn" layoutX="10.0" layoutY="10.0" onAction="#studentOverview" prefHeight="60.0" prefWidth="100.0" styleClass="sidebtn" stylesheets="@Css.css" text="Overview" />
+            <JFXButton fx:id="sHomeBtn" onAction="#studentHome" prefHeight="60.0" prefWidth="100.0" styleClass="sidebtn" stylesheets="@CSS.css" text="Home" />
+            <JFXButton fx:id="sOVerviewbtn" layoutX="10.0" layoutY="10.0" onAction="#studentOverview" prefHeight="60.0" prefWidth="100.0" styleClass="sidebtn" stylesheets="@CSS.css" text="Overview" />
             <JFXButton layoutX="10.0" layoutY="37.0" prefHeight="60.0" prefWidth="200.0" />
             <JFXButton layoutX="10.0" layoutY="64.0" prefHeight="60.0" prefWidth="200.0" />
          </children>
@@ -21,7 +21,7 @@
    <top>
       <AnchorPane prefHeight="28.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="closebtn" layoutX="556.0" mnemonicParsing="false" onAction="#close" stylesheets="@Css.css">
+            <Button fx:id="closebtn" layoutX="556.0" mnemonicParsing="false" onAction="#close" stylesheets="@CSS.css">
                <graphic>
                   <FontAwesomeIcon fill="#bc2b2b" iconName="TIMES_CIRCLE" size="1.8em" />
                </graphic>
